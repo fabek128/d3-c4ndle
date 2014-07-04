@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?1.25.0"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>        
+    <script type="text/javascript" src="./common.js"></script>
+    <script type="text/javascript" src="./argentobit.js"></script>    
+    <script type="text/javascript" src="./candle.js"></script>
+    <script type="text/javascript" src="./volume.js"></script>
+  <script>
+  $(function() {
+    $( ".boxChart" ).draggable();
+  });
+  </script>    
+  </head>
+  <body>
+    <style type="text/css">
+      body{
+        background-color: #0A0A0A;
+      }
+      #chart{
+        border: solid 1px #474747;
+        padding: 10px;
+      }
+
+      .yrule {
+        font-family: verdana, sans-serif;
+        font-size: 0.61em;
+        fill: white;
+      }
+
+      .yruleCursor {
+        font-family: verdana, sans-serif;
+        font-size: 0.61em;
+        fill: white;
+      }
+
+      .yruleCursorBox{
+        fill: #3c7bb5;
+        stroke: #002547;
+        /*fill-opacity: 0.3;*/
+      }
+
+      .yruleCursor {
+        font-family: verdana, sans-serif;
+        font-size: 0.61em;
+        fill: #292929;
+      }      
+
+      .yruleCursorCurrentValueBox{
+        fill: #f4ff77;
+        stroke: #292929;        
+      }      
+
+      .boxChart{
+        
+      }
+
+      .lineAsks {
+        fill: none;
+        stroke: steelblue;
+        stroke-width: 1.5px;
+      }
+
+      .lineBids {
+        fill: none;
+        stroke: red;
+        stroke-width: 1.5px;
+      }
+    </style>
+
+    <button onclick="resize();">Resize</button>
+  </body>
+</html>
