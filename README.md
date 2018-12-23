@@ -6,4 +6,4 @@ Simple Candlestick chart in D3.js.
 Screenshot
 ==========
 
-![Alt text](http://xfigue.milaweb.com/assets/screen.png)
+![Alt text](https://raw.githubusercontent.com/xfigue/d3-c4ndle/master/screen.jpg)
