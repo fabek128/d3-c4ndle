@@ -1,0 +1,147 @@
+:root {
+  --bg-primary: #0a0a0a;
+  --fg-primary: #ffffff;
+  --grid-line: rgba(255, 255, 255, 0.06);
+  --axis-color: #666666;
+  --up-color: #4caf50;
+  --down-color: #f44336;
+  --crosshair-color: rgba(255, 255, 255, 0.3);
+  --current-price-color: #ffd700;
+  --mouse-price-color: #4a9eff;
+  --tooltip-bg: rgba(10, 10, 10, 0.95);
+  --tooltip-border: #474747;
+  --font-family: 'Verdana', 'Segoe UI', system-ui, sans-serif;
+  --font-size-small: 0.7rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--fg-primary);
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+.chart-container {
+  display: grid;
+  grid-template-rows: 60% 40%;
+  width: 100%;
+  height: 100%;
+  gap: 2px;
+}
+
+.chart-layer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-layer svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Candlestick styles */
+.stem {
+  stroke-width: 1;
+}
+
+.candle-body {
+  stroke-width: 1;
+}
+
+/* Axis */
+.axis line,
+.axis path {
+  stroke: var(--axis-color);
+}
+
+.axis text {
+  fill: var(--fg-primary);
+  font-size: var(--font-size-small);
+  font-family: var(--font-family);
+}
+
+/* Grid */
+.grid line {
+  stroke: var(--grid-line);
+  stroke-dasharray: 2, 2;
+}
+
+/* Crosshair */
+.crosshair-line {
+  stroke: var(--crosshair-color);
+  stroke-dasharray: 4, 4;
+  stroke-width: 1;
+  pointer-events: none;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  padding: 8px 12px;
+  background: var(--tooltip-bg);
+  border: 1px solid var(--tooltip-border);
+  border-radius: 4px;
+  font-size: var(--font-size-small);
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.tooltip.visible {
+  opacity: 1;
+}
+
+/* Current price line */
+.current-price-line {
+  stroke: var(--current-price-color);
+  stroke-width: 1;
+  stroke-dasharray: 2, 2;
+  pointer-events: none;
+}
+
+.current-price-label {
+  fill: var(--current-price-color);
+  font-size: var(--font-size-small);
+  font-family: var(--font-family);
+  pointer-events: none;
+}
+
+/* Mouse price indicator */
+.mouse-price-line {
+  stroke: var(--mouse-price-color);
+  stroke-width: 1;
+  stroke-dasharray: 4, 3;
+  pointer-events: none;
+}
+
+.mouse-price-label {
+  fill: var(--mouse-price-color);
+  font-size: var(--font-size-small);
+  font-family: var(--font-family);
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chart-container {
+    grid-template-rows: 70% 30%;
+  }
+}
